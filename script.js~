@@ -1,0 +1,18 @@
+$(document).ready(function(){
+	chrome.tabs.getSelected(null, function(tab) {
+		robotURL = "http://" + getHostname(tab.url) + "/robots.txt"
+        	/*htmlString = 	'<div class="botInfo">\
+        				<h1> url: ' + tab.url + '</h1>\
+        				<h1> hostname: ' + getHostname(tab.url) + '</h1>\
+				</div>';
+		$('#content').html(htmlString);*/
+
+		//window.location = robotURL;		// Open in popup
+		window.open(robotURL);		// Open in new tab
+      	});
+});
+
+function getHostname(str) {
+	var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+	return str.match(re)[1].toString();
+}

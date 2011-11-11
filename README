@@ -1,0 +1,4 @@
+Basic Chrome extension to quickly display the contents of robots.txt for the host of the current site.
+
+Uses a basic jQuery doctools, and the chrome tabs extension, to determine host url and load <host>/robots.txt (in new tab).
+I have no idea why I made this. I think I was planning on making a webcrawler or something.
